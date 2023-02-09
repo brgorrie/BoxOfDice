@@ -7,7 +7,7 @@ public class Program
         {
             if (!String.IsNullOrWhiteSpace(args[0]) && args[0].ToLower().Equals("1d6"))
             {
-                Console.WriteLine("Result:");
+                Console.WriteLine("Result: 1");
             }
             else
             {

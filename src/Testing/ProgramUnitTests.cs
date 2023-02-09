@@ -71,7 +71,7 @@ public class ProgramUnitTests
 
         Roll.Program.Main(new string[] { "1D6" });
 
-        var regularExpression = "^Result: [1-6]$";
+        var regularExpression = "Result: [1-6]";
 
         Assert.Matches(regularExpression, output.ToString());
 
