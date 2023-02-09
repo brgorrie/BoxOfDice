@@ -32,4 +32,18 @@ public class ProgramUnitTests
 
     }
 
+    [Fact]
+    public void MainRoll1D6Test()
+    {
+
+        var output = new StringWriter();
+        Console.SetOut(output);
+
+        Roll.Program.Main(new string[] { "1D6" });
+
+        var expectedValue = "Result:";
+
+        Assert.StartsWith(expectedValue, output.ToString());
+
+    }
 }
