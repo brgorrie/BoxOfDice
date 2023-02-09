@@ -71,9 +71,9 @@ public class ProgramUnitTests
 
         Roll.Program.Main(new string[] { "1D6" });
 
-        var expectedValue = "Result:";
+        var regularExpression = "^Result: [1-6]$";
 
-        Assert.StartsWith(expectedValue, output.ToString());
+        Assert.Matches(regularExpression, output.ToString());
 
     }
 }
