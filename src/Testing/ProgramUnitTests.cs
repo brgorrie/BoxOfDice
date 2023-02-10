@@ -66,14 +66,19 @@ public class ProgramUnitTests
     public void MainRoll1D6Test()
     {
 
-        var output = new StringWriter();
-        Console.SetOut(output);
-
-        Roll.Program.Main(new string[] { "1D6" });
+        var firstResult = CallProgramMain(new string[] { "1D6" });
 
         var regularExpression = "Result: [1-6]";
 
-        Assert.Matches(regularExpression, output.ToString());
+        Assert.Matches(regularExpression, firstResult);
 
+    }
+
+    private static string CallProgramMain(string[] args)
+    {
+        var output = new StringWriter();
+        Console.SetOut(output);
+        Roll.Program.Main(args);
+        return output.ToString();
     }
 }
