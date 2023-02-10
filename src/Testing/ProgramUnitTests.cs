@@ -6,14 +6,9 @@ public class ProgramUnitTests
     public void MainNoParametersTest()
     {
 
-        var output = new StringWriter();
-        Console.SetOut(output);
-
-        Roll.Program.Main(Array.Empty<string>());
-
         var expectedValue = "No parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
-        Assert.Contains(expectedValue, output.ToString());
+        Assert.Contains(expectedValue, CallProgramMain(Array.Empty<string>()));
 
     }
 
@@ -21,14 +16,9 @@ public class ProgramUnitTests
     public void MainInvalidParametersTest()
     {
 
-        var output = new StringWriter();
-        Console.SetOut(output);
-
-        Roll.Program.Main(new string[]{"invalid parameter"});
-
         var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
-        Assert.Contains(expectedValue, output.ToString());
+        Assert.Contains(expectedValue, CallProgramMain(new string[] { "invalid parameter" }));
 
     }
 
@@ -36,14 +26,9 @@ public class ProgramUnitTests
     public void MainEmptyStringInvalidParametersTest()
     {
 
-        var output = new StringWriter();
-        Console.SetOut(output);
-
-        Roll.Program.Main(new string[] { "" });
-
         var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
-        Assert.Contains(expectedValue, output.ToString());
+        Assert.Contains(expectedValue, CallProgramMain(new string[] { "" }));
 
     }
 
@@ -51,14 +36,9 @@ public class ProgramUnitTests
     public void MainWhiteSpaceInvalidParametersTest()
     {
 
-        var output = new StringWriter();
-        Console.SetOut(output);
-
-        Roll.Program.Main(new string[] { "      " });
-
         var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
-        Assert.Contains(expectedValue, output.ToString());
+        Assert.Contains(expectedValue, CallProgramMain(new string[] { "      " }));
 
     }
 
