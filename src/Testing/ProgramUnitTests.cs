@@ -46,11 +46,28 @@ public class ProgramUnitTests
     public void MainRoll1D6Test()
     {
 
-        var firstResult = CallProgramMain(new string[] { "1D6" });
+        var diceRoll = CallProgramMain(new string[] { "1D6" });
 
         var regularExpression = "Result: [1-6]";
 
-        Assert.Matches(regularExpression, firstResult);
+        Assert.Matches(regularExpression, diceRoll);
+
+    }
+
+    [Fact]
+    public void MainRoll1D6CheckDifferentResultsTest()
+    {
+
+        var diceRoll1 = CallProgramMain(new string[] { "1D6" });
+        var diceRoll2 = CallProgramMain(new string[] { "1D6" });
+
+        var regularExpression = "Result: [1-6]";
+
+        Assert.Matches(regularExpression, diceRoll1);
+        Assert.Matches(regularExpression, diceRoll2);
+
+        // This forces the results to be different. 
+        Assert.NotEqual(diceRoll1, diceRoll2);
 
     }
 
