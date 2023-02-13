@@ -6,7 +6,7 @@ public class ProgramUnitTests
     public void MainNoParametersTest()
     {
 
-        var expectedValue = "No parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
+        var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
         Assert.Contains(expectedValue, CallProgramMain(Array.Empty<string>()));
 
@@ -16,7 +16,7 @@ public class ProgramUnitTests
     public void MainInvalidParametersTest()
     {
 
-        var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
+        var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
         Assert.Contains(expectedValue, CallProgramMain(new string[] { "invalid parameter" }));
 
@@ -26,7 +26,7 @@ public class ProgramUnitTests
     public void MainEmptyStringInvalidParametersTest()
     {
 
-        var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
+        var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
         Assert.Contains(expectedValue, CallProgramMain(new string[] { "" }));
 
@@ -36,7 +36,7 @@ public class ProgramUnitTests
     public void MainWhiteSpaceInvalidParametersTest()
     {
 
-        var expectedValue = "Invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
+        var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
 
         Assert.Contains(expectedValue, CallProgramMain(new string[] { "      " }));
 
@@ -48,7 +48,7 @@ public class ProgramUnitTests
 
         var diceRoll = CallProgramMain(new string[] { "1D6" });
 
-        var regularExpression = "Result: [1-6]";
+        var regularExpression = "Individual Results: [1-6]";
 
         Assert.Matches(regularExpression, diceRoll);
 
@@ -61,12 +61,13 @@ public class ProgramUnitTests
         var diceRoll1 = CallProgramMain(new string[] { "1D6" });
         var diceRoll2 = CallProgramMain(new string[] { "1D6" });
 
-        var regularExpression = "Result: [1-6]";
+        var regularExpression = "Individual Results: [1-6]";
 
         Assert.Matches(regularExpression, diceRoll1);
         Assert.Matches(regularExpression, diceRoll2);
 
-        // This forces the results to be different. 
+        // This forces the results to be different. While this looks like a valid test it isn't valid as you can roll a d6 twice and
+        // get the same value.
         Assert.NotEqual(diceRoll1, diceRoll2);
 
     }
