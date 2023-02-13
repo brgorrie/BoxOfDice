@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic.CompilerServices;
+using System.Security.Cryptography;
 
 namespace Roll;
 public class Program
@@ -22,7 +22,8 @@ public class Program
                 {
                     var rolls = int.Parse(match.Groups[1].Value);
                     var sides = int.Parse(match.Groups[3].Value);
-                    int[] results = RollDice(rolls, sides);
+
+                    int[] results = RollDice(CreateRandom(), rolls, sides);
 
                     Console.WriteLine($"Result for 1D{sides}: 1");
                     Console.WriteLine("Individual Results: " + string.Join(", ", results));
@@ -41,16 +42,25 @@ public class Program
         }
     }
 
-    private static int[] RollDice(int dice, int sides)
+    private static Random CreateRandom()
     {
-        var random = new Random();
+        var seed = new byte[sizeof(int)];
+        using (var rng = RandomNumberGenerator.Create())
+        {
+            rng.GetBytes(seed);
+        }
+        return new Random(BitConverter.ToInt32(seed, 0));
+    }
 
+    private static int[] RollDice(Random random, int rolls, int sides)
+    {
         // Roll the specified number of dice with the specified number of sides
-        var rolls = Enumerable.Range(0, dice)
-            .Select(d => random.Next(1, sides + 1))
-            .ToArray();
-
-        return rolls;
+        var results = new int[rolls];
+        for (int i = 0; i < rolls; i++)
+        {
+            results[i] = random.Next(1, sides + 1);
+        }
+        return results;
     }
 
 }
