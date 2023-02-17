@@ -19,4 +19,20 @@ public class InputValidatorUnitTests
         Assert.False( localValidator.IsValid(new String[]{}));
     }
 
+    [Fact]
+    public void IsValidEmptyStringTest()
+    {
+        InputValidator localValidator = new InputValidator();
+
+        Assert.False(localValidator.IsValid(new String[] {" "}));
+    }
+
+    [Fact]
+    public void IsValidInvalidStringTest()
+    {
+        InputValidator localValidator = new InputValidator();
+
+        Assert.False(localValidator.IsValid(new String[] { "ThisShouldFailValidation" }));
+    }
+
 }
