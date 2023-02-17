@@ -56,10 +56,17 @@ public class InputValidatorUnitTests
 
     [Theory]
     [InlineData(new object[] { new string[] { "1d4z" } })]
+    [InlineData(new object[] { new string[] { "l1d6" } })]
     [InlineData(new object[] { new string[] { "1B6" } })]
     [InlineData(new object[] { new string[] { "1d" } })]
     [InlineData(new object[] { new string[] { "D10" } })]
     [InlineData(new object[] { new string[] { "1d1O0" } })]
+    [InlineData(new object[] { new string[] { "1d6", "1D6" } })] //Invalid because multiple parameters.
+    [InlineData(new object[] { new string[] { " 1d6" } })]
+    [InlineData(new object[] { new string[] { "1d6 " } })]
+    [InlineData(new object[] { new string[] { " 1d6" } })]
+    [InlineData(new object[] { new string[] { "1 d 6" } })]
+    [InlineData(new object[] { new string[] { " 1d6 " } })]
     public void InvalidInputTests(string[] args)
     {
         InputValidator localValidator = new InputValidator();
