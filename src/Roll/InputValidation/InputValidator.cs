@@ -9,8 +9,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Roll.InputValidation;
+
+/*
+ * The purpose of this class is to provide validation for command line inputs and return the
+ * components of the parameter passed in.  
+ */
 public class InputValidator
 {
+
     public bool IsValid(string[] args)
     {
         bool result = args.Length == 1 && !String.IsNullOrWhiteSpace(args[0]);
@@ -21,6 +27,18 @@ public class InputValidator
             result = match.Success;
         }
         return result;
+    }
+
+    public (int Rolls, int Sides) ParseInput(string[] args)
+    {
+        var input = args[0];
+        var pattern = "^(\\d+)(d)(\\d+)$";
+        var match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+        if (match.Success)
+        {
+            return (int.Parse(match.Groups[1].Value), int.Parse(match.Groups[3].Value));
+        }
+        throw new Exception("Invalid input format");
     }
 
 }

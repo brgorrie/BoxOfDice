@@ -74,4 +74,12 @@ public class InputValidatorUnitTests
         Assert.False(localValidator.IsValid(args));
     }
 
+    [Fact]
+    public void DoesParseInputExist()
+    {
+        InputValidator localValidator = new InputValidator();
+        var inputs = localValidator.ParseInput(new String[] { "1d6" });
+        Assert.True(inputs.Rolls == 1 && inputs.Sides == 6);
+    }
+
 }
