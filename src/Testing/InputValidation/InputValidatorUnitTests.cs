@@ -82,4 +82,23 @@ public class InputValidatorUnitTests
         Assert.True(inputs.Rolls == 1 && inputs.Sides == 6);
     }
 
+    [Theory]
+    [InlineData(new object[] { new string[] { "1d4" } })]
+    [InlineData(new object[] { new string[] { "1D6" } })]
+    [InlineData(new object[] { new string[] { "1d8" } })]
+    [InlineData(new object[] { new string[] { "1D10" } })]
+    [InlineData(new object[] { new string[] { "1d100" } })]
+    [InlineData(new object[] { new string[] { "1D12" } })]
+    [InlineData(new object[] { new string[] { "1d20" } })]
+    [InlineData(new object[] { new string[] { "1D36" } })]
+    [InlineData(new object[] { new string[] { "9999999999999999d6" } })]
+    [InlineData(new object[] { new string[] { "1D9999999999999999" } })]
+    [InlineData(new object[] { new string[] { "9999999999999999d9999999999999999" } })]
+    public void ParseInputValidInputTest(string[] args)
+    {
+        InputValidator localValidator = new InputValidator();
+        var inputs = localValidator.ParseInput(new String[] { "1d6" });
+        Assert.True(inputs.Rolls >= 1 && inputs.Sides >= 1);
+    }
+
 }

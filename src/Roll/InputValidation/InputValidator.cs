@@ -31,13 +31,17 @@ public class InputValidator
 
     public (int Rolls, int Sides) ParseInput(string[] args)
     {
-        var input = args[0];
-        var pattern = "^(\\d+)(d)(\\d+)$";
-        var match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
-        if (match.Success)
+        if (IsValid(args))
         {
-            return (int.Parse(match.Groups[1].Value), int.Parse(match.Groups[3].Value));
+            var input = args[0];
+            var pattern = "^(\\d+)(d)(\\d+)$";
+            var match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
+            if (match.Success)
+            {
+                return (int.Parse(match.Groups[1].Value), int.Parse(match.Groups[3].Value));
+            }
         }
+
         throw new Exception("Invalid input format");
     }
 
