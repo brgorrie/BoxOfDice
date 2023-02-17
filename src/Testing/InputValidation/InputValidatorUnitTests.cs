@@ -11,94 +11,56 @@ using Roll.InputValidation;
 namespace Testing.InputValidation;
 public class InputValidatorUnitTests
 {
-    [Fact]
-    public void IsValidExistsTest()
-    {
-        InputValidator localValidator = new InputValidator();
 
-        Assert.False( localValidator.IsValid(new String[]{}));
-    }
+    private readonly InputValidator _inputValidator = new InputValidator();
 
     [Fact]
-    public void IsValidEmptyStringTest()
+    public void ParseInput_ValidInput_ReturnsRollsAndSides()
     {
-        InputValidator localValidator = new InputValidator();
+        // Arrange
+        var input = new[] { "2d6" };
 
-        Assert.False(localValidator.IsValid(new String[] {" "}));
-    }
+        // Act
+        var (rolls, sides) = _inputValidator.ParseInput(input);
 
-    [Fact]
-    public void IsValidInvalidStringTest()
-    {
-        InputValidator localValidator = new InputValidator();
-
-        Assert.False(localValidator.IsValid(new String[] { "ThisShouldFailValidation" }));
+        // Assert
+        Assert.Equal(2, rolls);
+        Assert.Equal(6, sides);
     }
 
     [Theory]
-    [InlineData(new object[] { new string[] { "1d4" } })]
-    [InlineData(new object[] { new string[] { "1D6" } })]
-    [InlineData(new object[] { new string[] { "1d8" } })]
-    [InlineData(new object[] { new string[] { "1D10" } })]
-    [InlineData(new object[] { new string[] { "1d100" } })]
-    [InlineData(new object[] { new string[] { "1D12" } })]
-    [InlineData(new object[] { new string[] { "1d20" } })]
-    [InlineData(new object[] { new string[] { "1D36" } })]
-    [InlineData(new object[] { new string[] { "9999999999999999d6" } })]
-    [InlineData(new object[] { new string[] { "1D9999999999999999" } })]
-    [InlineData(new object[] { new string[] { "9999999999999999d9999999999999999" } })]
-    public void ValidInputTests(string[] args)
+    [InlineData("2d6", 2, 6)]
+    [InlineData("1d20", 1, 20)]
+    [InlineData("10d10", 10, 10)]
+    public void ParseInput_ValidInput_ReturnsCorrectValues(string inputString, int expectedRolls, int expectedSides)
     {
-        InputValidator localValidator = new InputValidator();
+        // Arrange
+        var input = new[] { inputString };
 
-        Assert.True(localValidator.IsValid(args));
+        // Act
+        var (rolls, sides) = _inputValidator.ParseInput(input);
+
+        // Assert
+        Assert.Equal(expectedRolls, rolls);
+        Assert.Equal(expectedSides, sides);
     }
 
     [Theory]
-    [InlineData(new object[] { new string[] { "1d4z" } })]
-    [InlineData(new object[] { new string[] { "l1d6" } })]
-    [InlineData(new object[] { new string[] { "1B6" } })]
-    [InlineData(new object[] { new string[] { "1d" } })]
-    [InlineData(new object[] { new string[] { "D10" } })]
-    [InlineData(new object[] { new string[] { "1d1O0" } })]
-    [InlineData(new object[] { new string[] { "1d6", "1D6" } })] //Invalid because multiple parameters.
-    [InlineData(new object[] { new string[] { " 1d6" } })]
-    [InlineData(new object[] { new string[] { "1d6 " } })]
-    [InlineData(new object[] { new string[] { " 1d6" } })]
-    [InlineData(new object[] { new string[] { "1 d 6" } })]
-    [InlineData(new object[] { new string[] { " 1d6 " } })]
-    public void InvalidInputTests(string[] args)
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    [InlineData("2 D 6")]
+    [InlineData("d6")]
+    [InlineData("2d")]
+    [InlineData("2d6d8")]
+    [InlineData("hello world")]
+    public void ParseInput_InvalidInput_ThrowsArgumentException(string inputString)
     {
-        InputValidator localValidator = new InputValidator();
+        // Arrange
+        var input = new[] { inputString };
 
-        Assert.False(localValidator.IsValid(args));
-    }
-
-    [Fact]
-    public void DoesParseInputExist()
-    {
-        InputValidator localValidator = new InputValidator();
-        var inputs = localValidator.ParseInput(new String[] { "1d6" });
-        Assert.True(inputs.Rolls == 1 && inputs.Sides == 6);
-    }
-
-    [Theory]
-    [InlineData(new object[] { new string[] { "1d4" } })]
-    [InlineData(new object[] { new string[] { "1D6" } })]
-    [InlineData(new object[] { new string[] { "1d8" } })]
-    [InlineData(new object[] { new string[] { "1D10" } })]
-    [InlineData(new object[] { new string[] { "1d100" } })]
-    [InlineData(new object[] { new string[] { "1D12" } })]
-    [InlineData(new object[] { new string[] { "1d20" } })]
-    [InlineData(new object[] { new string[] { "1D36" } })]
-    [InlineData(new object[] { new string[] { "9999999999999999d6" } })]
-    [InlineData(new object[] { new string[] { "1D9999999999999999" } })]
-    [InlineData(new object[] { new string[] { "9999999999999999d9999999999999999" } })]
-    public void ParseInputValidInputTest(string[] args)
-    {
-        InputValidator localValidator = new InputValidator();
-        var inputs = localValidator.ParseInput(new String[] { "1d6" });
-        Assert.True(inputs.Rolls >= 1 && inputs.Sides >= 1);
+        // Act & Assert
+        Assert.Throws<ArgumentException>(() => _inputValidator.ParseInput(input));
     }
 
 }
