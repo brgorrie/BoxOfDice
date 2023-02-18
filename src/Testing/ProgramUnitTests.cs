@@ -3,7 +3,7 @@ namespace Testing;
 public class ProgramUnitTests
 {
     [Fact]
-    public void MainNoParametersTest()
+    public void Main_NoParametersTest()
     {
 
         var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
@@ -13,7 +13,7 @@ public class ProgramUnitTests
     }
 
     [Fact]
-    public void MainInvalidParametersTest()
+    public void Main_InvalidParametersTest()
     {
 
         var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
@@ -23,7 +23,7 @@ public class ProgramUnitTests
     }
 
     [Fact]
-    public void MainEmptyStringInvalidParametersTest()
+    public void Main_EmptyString_InvalidParametersTest()
     {
 
         var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
@@ -33,7 +33,7 @@ public class ProgramUnitTests
     }
 
     [Fact]
-    public void MainWhiteSpaceInvalidParametersTest()
+    public void Main_WhiteSpace_InvalidParametersTest()
     {
 
         var expectedValue = "Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.";
@@ -43,7 +43,7 @@ public class ProgramUnitTests
     }
 
     [Fact]
-    public void MainRoll1D6Test()
+    public void Main_Roll1D6Test()
     {
 
         var diceRoll = CallProgramMain(new string[] { "1D6" });
@@ -55,7 +55,7 @@ public class ProgramUnitTests
     }
 
     [Fact]
-    public void MainRoll1D6CheckDifferentResultsTest()
+    public void Main_Roll1D6_CheckDifferentResultsTest()
     {
 
         var diceRoll1 = CallProgramMain(new string[] { "1D6" });
@@ -72,6 +72,9 @@ public class ProgramUnitTests
 
     }
 
+    /*
+     * Utility function to call the main method and capture console output for the unit tests.
+     */
     private static string CallProgramMain(string[] args)
     {
         var output = new StringWriter();
