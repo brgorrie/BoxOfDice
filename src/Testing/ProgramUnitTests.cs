@@ -46,11 +46,11 @@ public class ProgramUnitTests
     public void Main_Roll1D6Test()
     {
 
-        var diceRoll = CallProgramMain(new string[] { "1D6" });
+        var output = CallProgramMain(new string[] { "1D6" });
 
         var regularExpression = "Individual Results: [1-6]";
 
-        Assert.Matches(regularExpression, diceRoll);
+        Assert.Matches(regularExpression, output);
 
     }
 
@@ -78,8 +78,10 @@ public class ProgramUnitTests
     private static string CallProgramMain(string[] args)
     {
         var output = new StringWriter();
+        var originalOutput = Console.Out;
         Console.SetOut(output);
         Roll.Program.Main(args);
+        Console.SetOut(originalOutput);
         return output.ToString();
     }
 
