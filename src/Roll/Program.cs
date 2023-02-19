@@ -1,7 +1,3 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
-using System.Security.Cryptography;
 using Roll.DiceRolling;
 using Roll.InputValidation;
 using Roll.OutputPrinting;
@@ -10,11 +6,11 @@ namespace Roll;
 public class Program
 {
 
-    private readonly InputValidator _inputValidator;
-    private readonly DiceRoller _diceRoller;
-    private readonly OutputPrinter _outputPrinter;
+    private readonly IInputValidator _inputValidator;
+    private readonly IDiceRoller _diceRoller;
+    private readonly IOutputPrinter _outputPrinter;
 
-    public Program(InputValidator inputValidator, DiceRoller diceRoller, OutputPrinter outputPrinter)
+    public Program(IInputValidator inputValidator, IDiceRoller diceRoller, IOutputPrinter outputPrinter)
     {
         _inputValidator = inputValidator;
         _diceRoller = diceRoller;

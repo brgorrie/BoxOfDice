@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace Roll.InputValidation;
 
-public class InputValidator
+public class InputValidator : IInputValidator
 {
 
     private const string VALIDATION_PATTERN = "^(\\d+)(d)(\\d+)$";

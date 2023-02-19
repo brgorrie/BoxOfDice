@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 
 namespace Roll.DiceRolling;
-public class DiceRoller
+public class DiceRoller : IDiceRoller
 {
 
     public int[] RollDice(int rolls, int sides)

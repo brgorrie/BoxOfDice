@@ -1,6 +1,6 @@
 
 namespace Roll.OutputPrinting;
-public class OutputPrinter
+public class OutputPrinter : IOutputPrinter
 {
 
     public void PrintResults(int[] results, int sides)

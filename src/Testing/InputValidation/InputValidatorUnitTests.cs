@@ -12,7 +12,7 @@ namespace Testing.InputValidation;
 public class InputValidatorUnitTests
 {
 
-    private readonly InputValidator _inputValidator = new InputValidator();
+    private readonly IInputValidator _inputValidator = new InputValidator();
 
     [Fact]
     public void ParseInput_ValidInput_ReturnsRollsAndSides()
