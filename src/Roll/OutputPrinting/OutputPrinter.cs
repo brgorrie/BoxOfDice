@@ -1,4 +1,4 @@
-
+﻿
 namespace Roll.OutputPrinting;
 public class OutputPrinter : IOutputPrinter
 {
@@ -21,7 +21,6 @@ public class OutputPrinter : IOutputPrinter
         }
 
         Console.WriteLine($"UUID: {Guid.NewGuid().ToString()}");
-        Console.WriteLine($"Result for 1D{sides}: 1");
         Console.WriteLine("Individual Results: " + string.Join(", ", results));
         Console.WriteLine("Average: " + results.Average());
         Console.WriteLine("Total: " + results.Sum());
