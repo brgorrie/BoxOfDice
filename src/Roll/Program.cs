@@ -1,45 +1,49 @@
+﻿using Autofac;
 using Roll.DiceRolling;
 using Roll.InputValidation;
 using Roll.OutputPrinting;
 
-namespace Roll;
-public class Program
+namespace Roll
 {
-
-    private readonly IInputValidator _inputValidator;
-    private readonly IDiceRoller _diceRoller;
-    private readonly IOutputPrinter _outputPrinter;
-
-    public Program(IInputValidator inputValidator, IDiceRoller diceRoller, IOutputPrinter outputPrinter)
+    public class Program
     {
-        _inputValidator = inputValidator;
-        _diceRoller = diceRoller;
-        _outputPrinter = outputPrinter;
-    }
+        private readonly IInputValidator _inputValidator;
+        private readonly IDiceRoller _diceRoller;
+        private readonly IOutputPrinter _outputPrinter;
 
-    public void Run(string[] args)
-    {
-
-
-        try
+        public Program(IInputValidator inputValidator, IDiceRoller diceRoller, IOutputPrinter outputPrinter)
         {
-            var (rolls, sides) = _inputValidator.ParseInput(args);
-
-            _outputPrinter.PrintResults(_diceRoller.RollDice(rolls, sides), sides);
-
+            _inputValidator = inputValidator;
+            _diceRoller = diceRoller;
+            _outputPrinter = outputPrinter;
         }
-        catch (ArgumentException ex)
+
+        public void Run(string[] args)
         {
-            _outputPrinter.PrintArgumentException(ex);
+            try
+            {
+                var (rolls, sides) = _inputValidator.ParseInput(args);
+                _outputPrinter.PrintResults(_diceRoller.RollDice(rolls, sides), sides);
+            }
+            catch (ArgumentException ex)
+            {
+                _outputPrinter.PrintArgumentException(ex);
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<InputValidator>().As<IInputValidator>();
+            builder.RegisterType<DiceRoller>().As<IDiceRoller>();
+            builder.RegisterType<OutputPrinter>().As<IOutputPrinter>();
+            builder.RegisterType<Program>();
+            var container = builder.Build();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var program = scope.Resolve<Program>();
+                program.Run(args);
+            }
         }
     }
-
-    public static void Main(string[] args)
-    {
-
-        var program = new Program(new InputValidator(), new DiceRoller(), new OutputPrinter());
-        program.Run(args);
-
-    }
-
 }
