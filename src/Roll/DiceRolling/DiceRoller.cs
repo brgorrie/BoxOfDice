@@ -1,33 +1,25 @@
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 
 namespace Roll.DiceRolling;
 public class DiceRoller : IDiceRoller
 {
-
     public int[] RollDice(int rolls, int sides)
     {
-        return RollDice(CreateRandom(), rolls, sides);
-    }
-
-    public int[] RollDice(Random random, int rolls, int sides)
-    {
-        // Roll the specified number of dice with the specified number of sides
         var results = new int[rolls];
-        for (int i = 0; i < rolls; i++)
-        {
-            results[i] = random.Next(1, sides + 1);
-        }
-        return results;
-    }
-
-    public Random CreateRandom()
-    {
-        var seed = new byte[sizeof(int)];
+        var bytes = new byte[4];
         using (var rng = RandomNumberGenerator.Create())
         {
-            rng.GetBytes(seed);
+            for (int i = 0; i < rolls; i++)
+            {
+                rng.GetBytes(bytes);
+                int value = BitConverter.ToInt32(bytes, 0);
+                // Ensure that the value is non-negative
+                value = value >= 0 ? value : -value;
+                // Map the value to a number between 1 and sides
+                results[i] = (value % sides) + 1;
+            }
         }
-        return new Random(BitConverter.ToInt32(seed, 0));
+        return results;
     }
 
 }

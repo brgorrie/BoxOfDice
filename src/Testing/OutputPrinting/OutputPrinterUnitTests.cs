@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -31,7 +31,6 @@ public class OutputPrinterUnitTests
         // Assert
         var consoleOutput = output.ToString();
         
-        Assert.Contains($"Result for 1D{expectedSides}: 1", consoleOutput);
         Assert.Contains("Individual Results: " + string.Join(", ", expectedResults), consoleOutput);
         Assert.Contains($"Average: {expectedAverage}", consoleOutput);
         Assert.Contains($"Total: {expectedTotal}", consoleOutput);

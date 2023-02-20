@@ -6,6 +6,5 @@ namespace Roll.DiceRolling;
 public interface IDiceRoller
 {
     int[] RollDice(int rolls, int sides);
-    int[] RollDice(Random random, int rolls, int sides);
-    Random CreateRandom();
+
 }
