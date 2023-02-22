@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Roll.DiceRolling;
+using Roll.Factory;
 using Roll.InputValidation;
 using Roll.OutputPrinting;
 
@@ -35,6 +36,7 @@ namespace Roll
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<InputValidator>().As<IInputValidator>();
+            builder.RegisterType<DiceFactory>().As<IDiceFactory>();
             builder.RegisterType<DiceRoller>().As<IDiceRoller>();
             builder.RegisterType<OutputPrinter>().As<IOutputPrinter>();
             builder.RegisterType<Program>();

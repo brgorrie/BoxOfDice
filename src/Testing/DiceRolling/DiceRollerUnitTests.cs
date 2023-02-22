@@ -7,26 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Roll.DiceRolling;
+using Roll.Factory;
 
 namespace Testing.DiceRolling;
 public class DiceRollerUnitTests
 {
-    private readonly IDiceRoller _diceRoller;
-
-    public DiceRollerUnitTests()
-    {
-        _diceRoller = new DiceRoller();
-    }
 
     [Fact]
     public void RollDice_ReturnsCorrectNumberOfResults()
     {
         // Arrange
+        IDiceRoller diceRoller = new DiceRoller(new DiceFactory());
         int rolls = 10;
         int sides = 6;
 
         // Act
-        var results = _diceRoller.RollDice(rolls, sides);
+        var results = diceRoller.RollDice(rolls, sides);
 
         // Assert
         Assert.Equal(rolls, results.Length);
@@ -48,11 +44,12 @@ public class DiceRollerUnitTests
     public void RollDice_ReturnsResultsInValidRange(int rolls, int sides)
     {
         // Arrange
+        IDiceRoller diceRoller = new DiceRoller(new DiceFactory());
         int minValue = 1;
         int maxValue = sides;
 
         // Act
-        var results = _diceRoller.RollDice(rolls, sides);
+        var results = diceRoller.RollDice(rolls, sides);
 
         // Assert
         foreach (var result in results)

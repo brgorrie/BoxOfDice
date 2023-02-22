@@ -1,24 +1,29 @@
 ﻿using System.Security.Cryptography;
+using Roll.Factory;
+using Roll.Model;
 
 namespace Roll.DiceRolling;
 public class DiceRoller : IDiceRoller
 {
+
+    private readonly IDiceFactory _diceFactory;
+
+    public DiceRoller(IDiceFactory diceFactory)
+    {
+        _diceFactory = diceFactory;
+    }
+
     public int[] RollDice(int rolls, int sides)
     {
         var results = new int[rolls];
-        var bytes = new byte[4];
-        using (var rng = RandomNumberGenerator.Create())
+
+        IDice dice = _diceFactory.Create(sides);
+
+        for (int i = 0; i < rolls; i++)
         {
-            for (int i = 0; i < rolls; i++)
-            {
-                rng.GetBytes(bytes);
-                int value = BitConverter.ToInt32(bytes, 0);
-                // Ensure that the value is non-negative
-                value = value >= 0 ? value : -value;
-                // Map the value to a number between 1 and sides
-                results[i] = (value % sides) + 1;
-            }
+            results[i] = dice.Roll();
         }
+
         return results;
     }
 
