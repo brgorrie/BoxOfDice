@@ -120,7 +120,10 @@ public class DiceUnitTests
             sum += (diff * diff) / expected;
         }
 
-        Assert.True(sum < criticalValue,$"Expected {sum} to be less than {criticalValue} but it wasn't.");
+        // divide sum by ten to move result by a factor of 10 as the mathnet library is returning the result /10 to what is
+        // expected by the unit test.  ie for a D6 dice instead of returning 16.10307986962326 we are getting 1.610307986962326
+        // for the 99% confidence level.  This allows them to be compared and the following assertion to be correct. 
+        Assert.True((sum/10) < criticalValue,$"Expected {sum}/10 to be less than {criticalValue} but it wasn't.");
     }
 
     private double GetChiSquaredCriticalValue(int sides)
@@ -144,7 +147,7 @@ public class DiceUnitTests
             }
         }
 
-        return criticalValue * 10;
+        return criticalValue;
     }
 
 }
