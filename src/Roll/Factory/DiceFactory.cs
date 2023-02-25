@@ -18,6 +18,14 @@ namespace Roll.Factory;
 
 public class DiceFactory : IDiceFactory
 {
+
+    private readonly int _defaultSides;
+
+    public DiceFactory(int defaultSides = 6)
+    {
+        _defaultSides = defaultSides;
+    }
+
     public IDice Create(int sides)
     {
         return new Dice(sides);
@@ -25,7 +33,7 @@ public class DiceFactory : IDiceFactory
 
     public IDice Create()
     {
-        return new Dice(6);
+        return new Dice(_defaultSides);
     }
 
 }
