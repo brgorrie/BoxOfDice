@@ -28,11 +28,22 @@ public class DiceRoller : IDiceRoller
 
     public int[] RollDice(int rolls, int sides)
     {
+
+        if (rolls < 1)
+        {
+            throw new ArgumentException("The number of rolls must be 1 or more.", nameof(rolls));
+        }
+
+        if (sides < 1)
+        {
+            throw new ArgumentException("The number of sides must be 1 or more.", nameof(sides));
+        }
+
         var results = new int[rolls];
 
-        IDice dice = _diceFactory.Create(sides);
+        var dice = _diceFactory.Create(sides);
 
-        for (int i = 0; i < rolls; i++)
+        for (var i = 0; i < rolls; i++)
         {
             results[i] = dice.Roll();
         }

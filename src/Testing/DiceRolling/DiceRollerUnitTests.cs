@@ -17,8 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
 using Roll.DiceRolling;
 using Roll.Factory;
+using Roll.Model;
 
 namespace Testing.DiceRolling;
 public class DiceRollerUnitTests
@@ -67,6 +69,36 @@ public class DiceRollerUnitTests
         {
             Assert.InRange(result, minValue, maxValue);
         }
+    }
+
+    [Fact]
+    public void RollDice_ReturnsCorrectResults_WithValidInputs()
+    {
+        // Arrange
+        var diceFactoryMock = new Mock<IDiceFactory>();
+        var diceMock = new Mock<IDice>();
+        diceMock.Setup(d => d.Roll()).Returns(3);
+        diceFactoryMock.Setup(df => df.Create(6)).Returns(diceMock.Object);
+
+        var diceRoller = new DiceRoller(diceFactoryMock.Object);
+
+        // Act
+        var results = diceRoller.RollDice(3, 6);
+
+        // Assert
+        Assert.Equal(new int[] { 3, 3, 3 }, results);
+    }
+
+    [Fact]
+    public void RollDice_ThrowsArgumentException_WithInvalidInputs()
+    {
+        // Arrange
+        var diceFactoryMock = new Mock<IDiceFactory>();
+        var diceRoller = new DiceRoller(diceFactoryMock.Object);
+
+        // Act & Assert
+        Assert.Throws<ArgumentException>(() => diceRoller.RollDice(0, 6));
+        Assert.Throws<ArgumentException>(() => diceRoller.RollDice(3, 0));
     }
 
 }
