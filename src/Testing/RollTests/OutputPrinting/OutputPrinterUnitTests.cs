@@ -51,7 +51,7 @@ public class OutputPrinterUnitTests
         var outputPrinter = new OutputPrinter();
 
         // Act and Assert
-        var ex = Assert.Throws<ArgumentNullException>(() => outputPrinter.PrintResults(invalidResults, sides));
+        var ex = Assert.Throws<ArgumentException>(() => outputPrinter.PrintResults(invalidResults, sides));
         Assert.Contains("Results array cannot be null or empty", ex.Message);
     }
 
