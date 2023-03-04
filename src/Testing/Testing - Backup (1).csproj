@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -26,6 +26,15 @@
   <ItemGroup>
     <ProjectReference Include="..\..\DiceLibrary\DiceLibrary.csproj" />
     <ProjectReference Include="..\Roll\Roll.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DiceLibrary\Factory\" />
+    <Folder Include="DiceL\DiceRolling\" />
+    <Folder Include="DiceRolling\" />
+    <Folder Include="InputValidation\" />
+    <Folder Include="Model\" />
+    <Folder Include="Factory\" />
   </ItemGroup>
 
 </Project>

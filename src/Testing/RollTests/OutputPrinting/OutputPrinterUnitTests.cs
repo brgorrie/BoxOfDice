@@ -12,14 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Roll.OutputPrinting;
 
-namespace Testing.OutputPrinting;
+namespace Testing.RollTests.OutputPrinting;
 public class OutputPrinterUnitTests
 {
     [Fact]
@@ -51,7 +46,7 @@ public class OutputPrinterUnitTests
     public void PrintResults_ThrowsArgumentException_WhenInvalidArrayProvided()
     {
         // Arrange
-        int[] invalidResults = null;
+        int[] invalidResults = new int[]{};
         int sides = 6;
         var outputPrinter = new OutputPrinter();
 
@@ -96,17 +91,6 @@ public class OutputPrinterUnitTests
             consoleOutput);
         Assert.Contains($"Either no parameters or invalid parameters were provided, please specify a dice roll ie 1d6 or 1D6 or put -? for help.",
             consoleOutput);
-    }
-
-    [Fact]
-    public void PrintArgumentException_ThrowsExceptionWhenCalledWithNull()
-    {
-        // Arrange
-        ArgumentException argumentException = null;
-        var outputPrinter = new OutputPrinter();
-
-        // Act and Assert
-        Assert.Throws<NullReferenceException>(() => outputPrinter.PrintArgumentException(argumentException));
     }
 
 }

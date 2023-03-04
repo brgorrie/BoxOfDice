@@ -12,12 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Roll.Model;
+using DiceLibrary.Model;
 
-namespace Roll.Factory;
+namespace DiceLibrary.Factory;
 
-public interface IDiceFactory
+public class DiceFactory : IDiceFactory
 {
-    IDice Create(int sides);
-    IDice Create();
+
+    private readonly int _defaultSides;
+
+    public DiceFactory(int defaultSides = 6)
+    {
+        _defaultSides = defaultSides;
+    }
+
+    public IDice Create(int sides)
+    {
+        return new Dice(sides);
+    }
+
+    public IDice Create()
+    {
+        return new Dice(_defaultSides);
+    }
+
 }

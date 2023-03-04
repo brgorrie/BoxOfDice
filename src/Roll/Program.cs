@@ -13,8 +13,8 @@
 // limitations under the License.
 
 using Autofac;
-using Roll.DiceRolling;
-using Roll.Factory;
+using DiceLibrary.DiceRolling;
+using DiceLibrary.Factory;
 using Roll.InputValidation;
 using Roll.OutputPrinting;
 

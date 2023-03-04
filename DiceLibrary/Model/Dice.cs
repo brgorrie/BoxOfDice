@@ -14,7 +14,7 @@
 
 using System.Security.Cryptography;
 
-namespace Roll.Model;
+namespace DiceLibrary.Model;
 
 public class Dice : IDice
 {

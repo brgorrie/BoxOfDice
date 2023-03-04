@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using DiceLibrary.Model;
 using MathNet.Numerics.Distributions;
-using Newtonsoft.Json.Linq;
-using Roll.Model;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Testing.Model;
+namespace Testing.DiceLibraryTests.Model;
 
 public class DiceUnitTests
 {

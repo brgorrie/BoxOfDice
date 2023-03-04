@@ -12,17 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DiceLibrary.DiceRolling;
+using DiceLibrary.Factory;
+using DiceLibrary.Model;
 using Moq;
-using Roll.DiceRolling;
-using Roll.Factory;
-using Roll.Model;
 
-namespace Testing.DiceRolling;
+namespace Testing.DiceLibraryTests.DiceRolling;
 public class DiceRollerUnitTests
 {
 

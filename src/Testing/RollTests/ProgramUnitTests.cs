@@ -12,7 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Testing;
+using Roll;
+
+namespace Testing.RollTests;
 
 public class ProgramUnitTests
 {

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Roll.Factory;
-using Roll.Model;
+using DiceLibrary.Factory;
+using DiceLibrary.Model;
 
-namespace Testing.Factory;
+namespace Testing.DiceLibraryTests.Factory;
 
 public class DiceFactoryUnitTests
 {

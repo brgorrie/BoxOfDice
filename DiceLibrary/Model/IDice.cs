@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Roll.DiceRolling;
+namespace DiceLibrary.Model;
 
-public interface IDiceRoller
+public interface IDice
 {
-    int[] RollDice(int rolls, int sides);
-
+    int Sides { get; }
+    int Roll();
 }

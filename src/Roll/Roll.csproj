@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Factory\" />
+    <ProjectReference Include="..\..\DiceLibrary\DiceLibrary.csproj" />
   </ItemGroup>
 
 </Project>
