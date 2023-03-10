@@ -35,6 +35,10 @@ public class OutputPrinter : IOutputPrinter
 
         Console.WriteLine($"UUID: {Guid.NewGuid().ToString()}");
         Console.WriteLine("Individual Results: " + string.Join(", ", results));
+        Array.Sort(results);
+        Console.WriteLine("Sorted Results:" + string.Join(", ", results));
+        Console.WriteLine("Min:" + results.Min());
+        Console.WriteLine("Max:" + results.Max());
         Console.WriteLine("Average: " + results.Average());
         Console.WriteLine("Total: " + results.Sum());
     }
