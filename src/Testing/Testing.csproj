@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DiceLibrary\DiceLibrary.csproj" />
+    <ProjectReference Include="..\DiceLibrary\DiceLibrary.csproj" />
     <ProjectReference Include="..\Roll\Roll.csproj" />
   </ItemGroup>
 

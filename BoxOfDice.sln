@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roll", "src\Roll\Roll.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "src\Testing\Testing.csproj", "{4B4F11F1-5222-45F5-AA6F-7F1B12E52D28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceLibrary", "DiceLibrary\DiceLibrary.csproj", "{2FB253BF-8C96-4D1E-9F78-41F13F6B7D1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceLibrary", "src\DiceLibrary\DiceLibrary.csproj", "{2FB253BF-8C96-4D1E-9F78-41F13F6B7D1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
