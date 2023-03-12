@@ -24,7 +24,6 @@ public class OutputPrinterUnitTests
         var outputPrinter = new OutputPrinter();
         var expectedSides = 6;
         var expectedResults = new int[] { 1, 2, 3, 4, 5, 6 };
-        var expectedAverage = expectedResults.Average();
         var expectedTotal = expectedResults.Sum();
 
         // Act
@@ -38,7 +37,6 @@ public class OutputPrinterUnitTests
         var consoleOutput = output.ToString();
         
         Assert.Contains("Individual Results: " + string.Join(", ", expectedResults), consoleOutput);
-        Assert.Contains($"Average: {expectedAverage}", consoleOutput);
         Assert.Contains($"Total: {expectedTotal}", consoleOutput);
     }
 

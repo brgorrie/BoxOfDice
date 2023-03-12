@@ -13,9 +13,14 @@
 // limitations under the License.
 
 namespace Roll.OutputPrinting;
+
+/// <summary>
+/// Represents an object that can print the results of a dice roll to the console.
+/// </summary>
 public class OutputPrinter : IOutputPrinter
 {
 
+    /// <inheritdoc />
     public void PrintResults(int[] results, int sides)
     {
         if( results == null ) 
@@ -38,6 +43,7 @@ public class OutputPrinter : IOutputPrinter
         Console.WriteLine($"Total: {results.Sum()}");
     }
 
+    /// <inheritdoc />
     public void PrintArgumentException(ArgumentException argumentException)
     {
         Console.WriteLine(argumentException.Message);

@@ -14,8 +14,19 @@
 
 namespace DiceLibrary.DiceRolling;
 
+/// <summary>
+/// Represents an object that can roll a specified number of dice with a specified number of sides.
+/// </summary>
 public interface IDiceRoller
 {
+
+    /// <summary>
+    /// Rolls a specified number of dice with a specified number of sides.
+    /// </summary>
+    /// <param name="rolls">The number of dice rolls to perform.</param>
+    /// <param name="sides">The number of sides on each die.</param>
+    /// <returns>An array of integers representing the results of each roll.</returns>
     int[] RollDice(int rolls, int sides);
 
 }
+

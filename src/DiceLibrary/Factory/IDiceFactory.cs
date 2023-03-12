@@ -16,8 +16,23 @@ using DiceLibrary.Model;
 
 namespace DiceLibrary.Factory;
 
+/// <summary>
+/// Represents a factory for creating instances of the <see cref="IDice"/> interface.
+/// </summary>
 public interface IDiceFactory
 {
+
+    /// <summary>
+    /// Creates a new instance of the <see cref="IDice"/> interface with the specified number of sides.
+    /// </summary>
+    /// <param name="sides">The number of sides for the new dice.</param>
+    /// <returns>A new instance of the <see cref="IDice"/> interface.</returns>
     IDice Create(int sides);
+
+    /// <summary>
+    /// Creates a new instance of the <see cref="IDice"/> interface with the default number of sides.
+    /// </summary>
+    /// <returns>A new instance of the <see cref="IDice"/> interface.</returns>
     IDice Create();
+
 }

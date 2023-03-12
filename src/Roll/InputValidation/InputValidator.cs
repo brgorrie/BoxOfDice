@@ -16,6 +16,9 @@ using System.Text.RegularExpressions;
 
 namespace Roll.InputValidation;
 
+/// <summary>
+/// Provides methods for validating input strings for dice rolls.
+/// </summary>
 public class InputValidator : IInputValidator
 {
 
@@ -28,6 +31,9 @@ public class InputValidator : IInputValidator
     ///     * there is one argument but it is an empty string
     ///     * the argument isn't of the 1d6 or 2D12 style of specifying die rolls. 
     /// </summary>
+    /// <param name="args">The command-line arguments.</param>
+    /// <returns>A tuple containing the number of rolls and the number of sides.</returns>
+    /// <exception cref="ArgumentException">Thrown when the input string is not valid.</exception>
     public (int Rolls, int Sides) ParseInput(string[] args)
     {
         if (args.Length != 1 || string.IsNullOrWhiteSpace(args[0]))

@@ -14,6 +14,9 @@
 
 namespace Roll.InputValidation;
 
+/// <summary>
+/// Provides a mechanism for validating and parsing input for rolling dice.
+/// </summary>
 public interface IInputValidator
 {
     /// <summary>
@@ -23,5 +26,8 @@ public interface IInputValidator
     ///     * there is one argument but it is an empty string
     ///     * the argument isn't of the 1d6 or 2D12 style of specifying die rolls. 
     /// </summary>
+    /// <param name="args">An array of strings containing the input arguments.</param>
+    /// <returns>A tuple containing the number of rolls and number of sides for each die.</returns>
+    /// <exception cref="ArgumentException">Thrown if the input format is invalid.</exception>
     (int Rolls, int Sides) ParseInput(string[] args);
 }

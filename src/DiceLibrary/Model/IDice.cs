@@ -14,8 +14,20 @@
 
 namespace DiceLibrary.Model;
 
+/// <summary>
+/// Defines the interface for a single dice with a specified number of sides.
+/// </summary>
 public interface IDice
 {
+
+    /// <summary>
+    /// Gets the number of sides on the dice.
+    /// </summary>
     int Sides { get; }
+
+    /// <summary>
+    /// Rolls the dice and returns the result.
+    /// </summary>
+    /// <returns>A random integer between 1 and the number of sides on the dice.</returns>
     int Roll();
 }

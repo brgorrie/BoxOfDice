@@ -14,8 +14,24 @@
 
 namespace Roll.OutputPrinting;
 
+/// <summary>
+/// Represents an object that can print the results of a dice roll to the console.
+/// </summary>
 public interface IOutputPrinter
 {
+
+    /// <summary>
+    /// Prints the results of a dice roll to the console.
+    /// </summary>
+    /// <param name="results">The results of the dice roll.</param>
+    /// <param name="sides">The number of sides on the dice that were rolled.</param>
+    /// <exception cref="ArgumentNullException">Thrown if the <paramref name="results"/> array is null or empty.</exception>
+    /// <exception cref="ArgumentException">Thrown if the <paramref name="sides"/> value is 0.</exception>
     void PrintResults(int[] results, int sides);
+
+    /// <summary>
+    /// Prints an argument exception message to the console.
+    /// </summary>
+    /// <param name="argumentException">The argument exception to print.</param>
     void PrintArgumentException(ArgumentException argumentException);
 }

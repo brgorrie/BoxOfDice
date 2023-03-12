@@ -16,10 +16,21 @@ using System.Security.Cryptography;
 
 namespace DiceLibrary.Model;
 
+/// <summary>
+/// Represents a single dice with a specified number of sides.
+/// </summary>
 public class Dice : IDice
 {
+    /// <summary>
+    /// The number of sides on the dice.
+    /// </summary>
     public int Sides { get; }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Dice"/> class with the specified number of sides.
+    /// </summary>
+    /// <param name="sides">The number of sides on the dice. Must be greater than or equal to 1.</param>
+    /// <exception cref="ArgumentException">Thrown when the number of sides is less than 1.</exception>
     public Dice(int sides)
     {
         if (sides < 1)
@@ -29,6 +40,10 @@ public class Dice : IDice
         Sides = sides;
     }
 
+    /// <summary>
+    /// Rolls the dice and returns the result.
+    /// </summary>
+    /// <returns>A random integer between 1 and the number of sides on the dice.</returns>
     public int Roll()
     {
         var bytes = new byte[4];
