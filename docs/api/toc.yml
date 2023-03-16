@@ -1,0 +1,41 @@
+### YamlMime:TableOfContent
+- uid: DiceLibrary.DiceRolling
+  name: DiceLibrary.DiceRolling
+  items:
+  - uid: DiceLibrary.DiceRolling.DiceRoller
+    name: DiceRoller
+  - uid: DiceLibrary.DiceRolling.IDiceRoller
+    name: IDiceRoller
+- uid: DiceLibrary.Factory
+  name: DiceLibrary.Factory
+  items:
+  - uid: DiceLibrary.Factory.DiceFactory
+    name: DiceFactory
+  - uid: DiceLibrary.Factory.IDiceFactory
+    name: IDiceFactory
+- uid: DiceLibrary.Model
+  name: DiceLibrary.Model
+  items:
+  - uid: DiceLibrary.Model.Dice
+    name: Dice
+  - uid: DiceLibrary.Model.IDice
+    name: IDice
+- uid: Roll
+  name: Roll
+  items:
+  - uid: Roll.Program
+    name: Program
+- uid: Roll.InputValidation
+  name: Roll.InputValidation
+  items:
+  - uid: Roll.InputValidation.IInputValidator
+    name: IInputValidator
+  - uid: Roll.InputValidation.InputValidator
+    name: InputValidator
+- uid: Roll.OutputPrinting
+  name: Roll.OutputPrinting
+  items:
+  - uid: Roll.OutputPrinting.IOutputPrinter
+    name: IOutputPrinter
+  - uid: Roll.OutputPrinting.OutputPrinter
+    name: OutputPrinter

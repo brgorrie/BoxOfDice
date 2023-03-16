@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiceLibrary.Factory
+  commentId: N:DiceLibrary.Factory
+  id: DiceLibrary.Factory
+  children:
+  - DiceLibrary.Factory.DiceFactory
+  - DiceLibrary.Factory.IDiceFactory
+  langs:
+  - csharp
+  - vb
+  name: DiceLibrary.Factory
+  nameWithType: DiceLibrary.Factory
+  fullName: DiceLibrary.Factory
+  type: Namespace
+  assemblies:
+  - DiceLibrary
+references:
+- uid: DiceLibrary.Factory.DiceFactory
+  commentId: T:DiceLibrary.Factory.DiceFactory
+  name: DiceFactory
+  nameWithType: DiceFactory
+  fullName: DiceLibrary.Factory.DiceFactory
+- uid: DiceLibrary.Factory.IDiceFactory
+  commentId: T:DiceLibrary.Factory.IDiceFactory
+  parent: DiceLibrary.Factory
+  name: IDiceFactory
+  nameWithType: IDiceFactory
+  fullName: DiceLibrary.Factory.IDiceFactory
+- uid: DiceLibrary.Factory
+  commentId: N:DiceLibrary.Factory
+  name: DiceLibrary.Factory
+  nameWithType: DiceLibrary.Factory
+  fullName: DiceLibrary.Factory
+  spec.csharp:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Factory
+    name: Factory
+  spec.vb:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Factory
+    name: Factory

@@ -1,0 +1,466 @@
+### YamlMime:ManagedReference
+items:
+- uid: Roll.OutputPrinting.OutputPrinter
+  commentId: T:Roll.OutputPrinting.OutputPrinter
+  id: OutputPrinter
+  parent: Roll.OutputPrinting
+  children:
+  - Roll.OutputPrinting.OutputPrinter.PrintArgumentException(System.ArgumentException)
+  - Roll.OutputPrinting.OutputPrinter.PrintResults(System.Int32[],System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: OutputPrinter
+  nameWithType: OutputPrinter
+  fullName: Roll.OutputPrinting.OutputPrinter
+  type: Class
+  source:
+    remote:
+      path: src/Roll/OutputPrinting/OutputPrinter.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: OutputPrinter
+    path: ../src/Roll/OutputPrinting/OutputPrinter.cs
+    startLine: 19
+  assemblies:
+  - Roll
+  namespace: Roll.OutputPrinting
+  summary: "\nRepresents an object that can print the results of a dice roll to the console.\n"
+  example: []
+  syntax:
+    content: 'public class OutputPrinter : IOutputPrinter'
+    content.vb: Public Class OutputPrinter Implements IOutputPrinter
+  inheritance:
+  - System.Object
+  implements:
+  - Roll.OutputPrinting.IOutputPrinter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Roll.OutputPrinting.OutputPrinter.PrintResults(System.Int32[],System.Int32)
+  commentId: M:Roll.OutputPrinting.OutputPrinter.PrintResults(System.Int32[],System.Int32)
+  id: PrintResults(System.Int32[],System.Int32)
+  parent: Roll.OutputPrinting.OutputPrinter
+  langs:
+  - csharp
+  - vb
+  name: PrintResults(int[], int)
+  nameWithType: OutputPrinter.PrintResults(int[], int)
+  fullName: Roll.OutputPrinting.OutputPrinter.PrintResults(int[], int)
+  type: Method
+  source:
+    remote:
+      path: src/Roll/OutputPrinting/OutputPrinter.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: PrintResults
+    path: ../src/Roll/OutputPrinting/OutputPrinter.cs
+    startLine: 23
+  assemblies:
+  - Roll
+  namespace: Roll.OutputPrinting
+  summary: "\nPrints the results of a dice roll to the console.\n"
+  example: []
+  syntax:
+    content: public void PrintResults(int[] results, int sides)
+    parameters:
+    - id: results
+      type: System.Int32[]
+      description: The results of the dice roll.
+    - id: sides
+      type: System.Int32
+      description: The number of sides on the dice that were rolled.
+    content.vb: Public Sub PrintResults(results As Integer(), sides As Integer)
+  overload: Roll.OutputPrinting.OutputPrinter.PrintResults*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if the <code data-dev-comment-type="paramref" class="paramref">results</code> array is null or empty.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if the <code data-dev-comment-type="paramref" class="paramref">sides</code> value is 0.
+  implements:
+  - Roll.OutputPrinting.IOutputPrinter.PrintResults(System.Int32[],System.Int32)
+  nameWithType.vb: OutputPrinter.PrintResults(Integer(), Integer)
+  fullName.vb: Roll.OutputPrinting.OutputPrinter.PrintResults(Integer(), Integer)
+  name.vb: PrintResults(Integer(), Integer)
+- uid: Roll.OutputPrinting.OutputPrinter.PrintArgumentException(System.ArgumentException)
+  commentId: M:Roll.OutputPrinting.OutputPrinter.PrintArgumentException(System.ArgumentException)
+  id: PrintArgumentException(System.ArgumentException)
+  parent: Roll.OutputPrinting.OutputPrinter
+  langs:
+  - csharp
+  - vb
+  name: PrintArgumentException(ArgumentException)
+  nameWithType: OutputPrinter.PrintArgumentException(ArgumentException)
+  fullName: Roll.OutputPrinting.OutputPrinter.PrintArgumentException(System.ArgumentException)
+  type: Method
+  source:
+    remote:
+      path: src/Roll/OutputPrinting/OutputPrinter.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: PrintArgumentException
+    path: ../src/Roll/OutputPrinting/OutputPrinter.cs
+    startLine: 46
+  assemblies:
+  - Roll
+  namespace: Roll.OutputPrinting
+  summary: "\nPrints an argument exception message to the console.\n"
+  example: []
+  syntax:
+    content: public void PrintArgumentException(ArgumentException argumentException)
+    parameters:
+    - id: argumentException
+      type: System.ArgumentException
+      description: The argument exception to print.
+    content.vb: Public Sub PrintArgumentException(argumentException As ArgumentException)
+  overload: Roll.OutputPrinting.OutputPrinter.PrintArgumentException*
+  implements:
+  - Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+references:
+- uid: Roll.OutputPrinting
+  commentId: N:Roll.OutputPrinting
+  name: Roll.OutputPrinting
+  nameWithType: Roll.OutputPrinting
+  fullName: Roll.OutputPrinting
+  spec.csharp:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.OutputPrinting
+    name: OutputPrinting
+  spec.vb:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.OutputPrinting
+    name: OutputPrinting
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Roll.OutputPrinting.IOutputPrinter
+  commentId: T:Roll.OutputPrinting.IOutputPrinter
+  parent: Roll.OutputPrinting
+  name: IOutputPrinter
+  nameWithType: IOutputPrinter
+  fullName: Roll.OutputPrinting.IOutputPrinter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Roll.OutputPrinting.OutputPrinter.PrintResults*
+  commentId: Overload:Roll.OutputPrinting.OutputPrinter.PrintResults
+  name: PrintResults
+  nameWithType: OutputPrinter.PrintResults
+  fullName: Roll.OutputPrinting.OutputPrinter.PrintResults
+- uid: Roll.OutputPrinting.IOutputPrinter.PrintResults(System.Int32[],System.Int32)
+  commentId: M:Roll.OutputPrinting.IOutputPrinter.PrintResults(System.Int32[],System.Int32)
+  parent: Roll.OutputPrinting.IOutputPrinter
+  isExternal: true
+  name: PrintResults(int[], int)
+  nameWithType: IOutputPrinter.PrintResults(int[], int)
+  fullName: Roll.OutputPrinting.IOutputPrinter.PrintResults(int[], int)
+  nameWithType.vb: IOutputPrinter.PrintResults(Integer(), Integer)
+  fullName.vb: Roll.OutputPrinting.IOutputPrinter.PrintResults(Integer(), Integer)
+  name.vb: PrintResults(Integer(), Integer)
+  spec.csharp:
+  - uid: Roll.OutputPrinting.IOutputPrinter.PrintResults(System.Int32[],System.Int32)
+    name: PrintResults
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Roll.OutputPrinting.IOutputPrinter.PrintResults(System.Int32[],System.Int32)
+    name: PrintResults
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  parent: System
+  isExternal: true
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: System.Int32[]
+  isExternal: true
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Roll.OutputPrinting.OutputPrinter.PrintArgumentException*
+  commentId: Overload:Roll.OutputPrinting.OutputPrinter.PrintArgumentException
+  name: PrintArgumentException
+  nameWithType: OutputPrinter.PrintArgumentException
+  fullName: Roll.OutputPrinting.OutputPrinter.PrintArgumentException
+- uid: Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+  commentId: M:Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+  parent: Roll.OutputPrinting.IOutputPrinter
+  isExternal: true
+  name: PrintArgumentException(ArgumentException)
+  nameWithType: IOutputPrinter.PrintArgumentException(ArgumentException)
+  fullName: Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+  spec.csharp:
+  - uid: Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+    name: PrintArgumentException
+  - name: (
+  - uid: System.ArgumentException
+    name: ArgumentException
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Roll.OutputPrinting.IOutputPrinter.PrintArgumentException(System.ArgumentException)
+    name: PrintArgumentException
+  - name: (
+  - uid: System.ArgumentException
+    name: ArgumentException
+    isExternal: true
+  - name: )

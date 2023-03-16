@@ -1,0 +1,196 @@
+### YamlMime:ManagedReference
+items:
+- uid: Roll.InputValidation.IInputValidator
+  commentId: T:Roll.InputValidation.IInputValidator
+  id: IInputValidator
+  parent: Roll.InputValidation
+  children:
+  - Roll.InputValidation.IInputValidator.ParseInput(System.String[])
+  langs:
+  - csharp
+  - vb
+  name: IInputValidator
+  nameWithType: IInputValidator
+  fullName: Roll.InputValidation.IInputValidator
+  type: Interface
+  source:
+    remote:
+      path: src/Roll/InputValidation/IInputValidator.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: IInputValidator
+    path: ../src/Roll/InputValidation/IInputValidator.cs
+    startLine: 19
+  assemblies:
+  - Roll
+  namespace: Roll.InputValidation
+  summary: "\nProvides a mechanism for validating and parsing input for rolling dice.\n"
+  example: []
+  syntax:
+    content: public interface IInputValidator
+    content.vb: Public Interface IInputValidator
+- uid: Roll.InputValidation.IInputValidator.ParseInput(System.String[])
+  commentId: M:Roll.InputValidation.IInputValidator.ParseInput(System.String[])
+  id: ParseInput(System.String[])
+  parent: Roll.InputValidation.IInputValidator
+  langs:
+  - csharp
+  - vb
+  name: ParseInput(string[])
+  nameWithType: IInputValidator.ParseInput(string[])
+  fullName: Roll.InputValidation.IInputValidator.ParseInput(string[])
+  type: Method
+  source:
+    remote:
+      path: src/Roll/InputValidation/IInputValidator.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: ParseInput
+    path: ../src/Roll/InputValidation/IInputValidator.cs
+    startLine: 31
+  assemblies:
+  - Roll
+  namespace: Roll.InputValidation
+  summary: "\nParses the first argument in the array and returns the number of rolls and number of sides values.\nThrows an exception if the input is invalid in that it:\n* doesn&apos;t have the correct number of arguments\n* there is one argument but it is an empty string\n* the argument isn&apos;t of the 1d6 or 2D12 style of specifying die rolls. \n"
+  example: []
+  syntax:
+    content: (int Rolls, int Sides) ParseInput(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
+      description: An array of strings containing the input arguments.
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32}
+      description: A tuple containing the number of rolls and number of sides for each die.
+    content.vb: Function ParseInput(args As String()) As (Rolls As Integer, Sides As Integer)
+  overload: Roll.InputValidation.IInputValidator.ParseInput*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if the input format is invalid.
+  nameWithType.vb: IInputValidator.ParseInput(String())
+  fullName.vb: Roll.InputValidation.IInputValidator.ParseInput(String())
+  name.vb: ParseInput(String())
+references:
+- uid: Roll.InputValidation
+  commentId: N:Roll.InputValidation
+  name: Roll.InputValidation
+  nameWithType: Roll.InputValidation
+  fullName: Roll.InputValidation
+  spec.csharp:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.InputValidation
+    name: InputValidation
+  spec.vb:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.InputValidation
+    name: InputValidation
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  parent: System
+  isExternal: true
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: Roll.InputValidation.IInputValidator.ParseInput*
+  commentId: Overload:Roll.InputValidation.IInputValidator.ParseInput
+  name: ParseInput
+  nameWithType: IInputValidator.ParseInput
+  fullName: Roll.InputValidation.IInputValidator.ParseInput
+- uid: System.String[]
+  isExternal: true
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.ValueTuple{System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`2
+  name: (int Rolls, int Sides)
+  nameWithType: (int Rolls, int Sides)
+  fullName: (int Rolls, int Sides)
+  nameWithType.vb: (Rolls As Integer, Sides As Integer)
+  fullName.vb: (Rolls As Integer, Sides As Integer)
+  name.vb: (Rolls As Integer, Sides As Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.Rolls
+    name: Rolls
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.Sides
+    name: Sides
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Int32,System.Int32}.Rolls
+    name: Rolls
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.Sides
+    name: Sides
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
