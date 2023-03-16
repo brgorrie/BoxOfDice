@@ -1,0 +1,24 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/git/BoxOfDice",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "LICENSE.html",
+          "hash": "JoFNX0ZgnEzRk58PBGjFwlnwTbR3Egomi1WgKEsTJoY="
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
