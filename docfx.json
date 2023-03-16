@@ -4,8 +4,17 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
-          ]
+            "src/**/*.{cs,csproj}",
+            "!**/obj/**",
+            "!**/bin/**",
+            "!**/*Test*.cs",
+            "!**/*test*.cs"
+          ],
+          "exclude": [
+            "**/packages/**",
+            "**/node_modules/**",
+            "**/*.md"
+          ]  
         }
       ],
       "dest": "api",
