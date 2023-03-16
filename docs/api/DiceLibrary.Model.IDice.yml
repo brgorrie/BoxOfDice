@@ -1,0 +1,138 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiceLibrary.Model.IDice
+  commentId: T:DiceLibrary.Model.IDice
+  id: IDice
+  parent: DiceLibrary.Model
+  children:
+  - DiceLibrary.Model.IDice.Roll
+  - DiceLibrary.Model.IDice.Sides
+  langs:
+  - csharp
+  - vb
+  name: IDice
+  nameWithType: IDice
+  fullName: DiceLibrary.Model.IDice
+  type: Interface
+  source:
+    remote:
+      path: src/DiceLibrary/Model/IDice.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: IDice
+    path: ../src/DiceLibrary/Model/IDice.cs
+    startLine: 19
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Model
+  summary: "\nDefines the interface for a single dice with a specified number of sides.\n"
+  example: []
+  syntax:
+    content: public interface IDice
+    content.vb: Public Interface IDice
+- uid: DiceLibrary.Model.IDice.Sides
+  commentId: P:DiceLibrary.Model.IDice.Sides
+  id: Sides
+  parent: DiceLibrary.Model.IDice
+  langs:
+  - csharp
+  - vb
+  name: Sides
+  nameWithType: IDice.Sides
+  fullName: DiceLibrary.Model.IDice.Sides
+  type: Property
+  source:
+    remote:
+      path: src/DiceLibrary/Model/IDice.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: Sides
+    path: ../src/DiceLibrary/Model/IDice.cs
+    startLine: 25
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Model
+  summary: "\nGets the number of sides on the dice.\n"
+  example: []
+  syntax:
+    content: int Sides { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Sides As Integer
+  overload: DiceLibrary.Model.IDice.Sides*
+- uid: DiceLibrary.Model.IDice.Roll
+  commentId: M:DiceLibrary.Model.IDice.Roll
+  id: Roll
+  parent: DiceLibrary.Model.IDice
+  langs:
+  - csharp
+  - vb
+  name: Roll()
+  nameWithType: IDice.Roll()
+  fullName: DiceLibrary.Model.IDice.Roll()
+  type: Method
+  source:
+    remote:
+      path: src/DiceLibrary/Model/IDice.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: Roll
+    path: ../src/DiceLibrary/Model/IDice.cs
+    startLine: 31
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Model
+  summary: "\nRolls the dice and returns the result.\n"
+  example: []
+  syntax:
+    content: int Roll()
+    return:
+      type: System.Int32
+      description: A random integer between 1 and the number of sides on the dice.
+    content.vb: Function Roll() As Integer
+  overload: DiceLibrary.Model.IDice.Roll*
+references:
+- uid: DiceLibrary.Model
+  commentId: N:DiceLibrary.Model
+  name: DiceLibrary.Model
+  nameWithType: DiceLibrary.Model
+  fullName: DiceLibrary.Model
+  spec.csharp:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Model
+    name: Model
+  spec.vb:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Model
+    name: Model
+- uid: DiceLibrary.Model.IDice.Sides*
+  commentId: Overload:DiceLibrary.Model.IDice.Sides
+  name: Sides
+  nameWithType: IDice.Sides
+  fullName: DiceLibrary.Model.IDice.Sides
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DiceLibrary.Model.IDice.Roll*
+  commentId: Overload:DiceLibrary.Model.IDice.Roll
+  name: Roll
+  nameWithType: IDice.Roll
+  fullName: DiceLibrary.Model.IDice.Roll

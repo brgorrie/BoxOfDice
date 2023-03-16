@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: Roll.InputValidation
+  commentId: N:Roll.InputValidation
+  id: Roll.InputValidation
+  children:
+  - Roll.InputValidation.IInputValidator
+  - Roll.InputValidation.InputValidator
+  langs:
+  - csharp
+  - vb
+  name: Roll.InputValidation
+  nameWithType: Roll.InputValidation
+  fullName: Roll.InputValidation
+  type: Namespace
+  assemblies:
+  - Roll
+references:
+- uid: Roll.InputValidation.IInputValidator
+  commentId: T:Roll.InputValidation.IInputValidator
+  parent: Roll.InputValidation
+  name: IInputValidator
+  nameWithType: IInputValidator
+  fullName: Roll.InputValidation.IInputValidator
+- uid: Roll.InputValidation.InputValidator
+  commentId: T:Roll.InputValidation.InputValidator
+  name: InputValidator
+  nameWithType: InputValidator
+  fullName: Roll.InputValidation.InputValidator
+- uid: Roll.InputValidation
+  commentId: N:Roll.InputValidation
+  name: Roll.InputValidation
+  nameWithType: Roll.InputValidation
+  fullName: Roll.InputValidation
+  spec.csharp:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.InputValidation
+    name: InputValidation
+  spec.vb:
+  - uid: Roll
+    name: Roll
+  - name: .
+  - uid: Roll.InputValidation
+    name: InputValidation

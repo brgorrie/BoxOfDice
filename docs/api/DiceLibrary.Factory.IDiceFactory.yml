@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: DiceLibrary.Factory.IDiceFactory
+  commentId: T:DiceLibrary.Factory.IDiceFactory
+  id: IDiceFactory
+  parent: DiceLibrary.Factory
+  children:
+  - DiceLibrary.Factory.IDiceFactory.Create
+  - DiceLibrary.Factory.IDiceFactory.Create(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: IDiceFactory
+  nameWithType: IDiceFactory
+  fullName: DiceLibrary.Factory.IDiceFactory
+  type: Interface
+  source:
+    remote:
+      path: src/DiceLibrary/Factory/IDiceFactory.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: IDiceFactory
+    path: ../src/DiceLibrary/Factory/IDiceFactory.cs
+    startLine: 21
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Factory
+  summary: "\nRepresents a factory for creating instances of the <xref href=\"DiceLibrary.Model.IDice\" data-throw-if-not-resolved=\"false\"></xref> interface.\n"
+  example: []
+  syntax:
+    content: public interface IDiceFactory
+    content.vb: Public Interface IDiceFactory
+- uid: DiceLibrary.Factory.IDiceFactory.Create(System.Int32)
+  commentId: M:DiceLibrary.Factory.IDiceFactory.Create(System.Int32)
+  id: Create(System.Int32)
+  parent: DiceLibrary.Factory.IDiceFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(int)
+  nameWithType: IDiceFactory.Create(int)
+  fullName: DiceLibrary.Factory.IDiceFactory.Create(int)
+  type: Method
+  source:
+    remote:
+      path: src/DiceLibrary/Factory/IDiceFactory.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: Create
+    path: ../src/DiceLibrary/Factory/IDiceFactory.cs
+    startLine: 29
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Factory
+  summary: "\nCreates a new instance of the <xref href=\"DiceLibrary.Model.IDice\" data-throw-if-not-resolved=\"false\"></xref> interface with the specified number of sides.\n"
+  example: []
+  syntax:
+    content: IDice Create(int sides)
+    parameters:
+    - id: sides
+      type: System.Int32
+      description: The number of sides for the new dice.
+    return:
+      type: DiceLibrary.Model.IDice
+      description: A new instance of the <xref href="DiceLibrary.Model.IDice" data-throw-if-not-resolved="false"></xref> interface.
+    content.vb: Function Create(sides As Integer) As IDice
+  overload: DiceLibrary.Factory.IDiceFactory.Create*
+  nameWithType.vb: IDiceFactory.Create(Integer)
+  fullName.vb: DiceLibrary.Factory.IDiceFactory.Create(Integer)
+  name.vb: Create(Integer)
+- uid: DiceLibrary.Factory.IDiceFactory.Create
+  commentId: M:DiceLibrary.Factory.IDiceFactory.Create
+  id: Create
+  parent: DiceLibrary.Factory.IDiceFactory
+  langs:
+  - csharp
+  - vb
+  name: Create()
+  nameWithType: IDiceFactory.Create()
+  fullName: DiceLibrary.Factory.IDiceFactory.Create()
+  type: Method
+  source:
+    remote:
+      path: src/DiceLibrary/Factory/IDiceFactory.cs
+      branch: feature/SetupDocFX
+      repo: https://github.com/brgorrie/BoxOfDice.git
+    id: Create
+    path: ../src/DiceLibrary/Factory/IDiceFactory.cs
+    startLine: 35
+  assemblies:
+  - DiceLibrary
+  namespace: DiceLibrary.Factory
+  summary: "\nCreates a new instance of the <xref href=\"DiceLibrary.Model.IDice\" data-throw-if-not-resolved=\"false\"></xref> interface with the default number of sides.\n"
+  example: []
+  syntax:
+    content: IDice Create()
+    return:
+      type: DiceLibrary.Model.IDice
+      description: A new instance of the <xref href="DiceLibrary.Model.IDice" data-throw-if-not-resolved="false"></xref> interface.
+    content.vb: Function Create() As IDice
+  overload: DiceLibrary.Factory.IDiceFactory.Create*
+references:
+- uid: DiceLibrary.Model.IDice
+  commentId: T:DiceLibrary.Model.IDice
+  parent: DiceLibrary.Model
+  name: IDice
+  nameWithType: IDice
+  fullName: DiceLibrary.Model.IDice
+- uid: DiceLibrary.Factory
+  commentId: N:DiceLibrary.Factory
+  name: DiceLibrary.Factory
+  nameWithType: DiceLibrary.Factory
+  fullName: DiceLibrary.Factory
+  spec.csharp:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Factory
+    name: Factory
+  spec.vb:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Factory
+    name: Factory
+- uid: DiceLibrary.Model
+  commentId: N:DiceLibrary.Model
+  name: DiceLibrary.Model
+  nameWithType: DiceLibrary.Model
+  fullName: DiceLibrary.Model
+  spec.csharp:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Model
+    name: Model
+  spec.vb:
+  - uid: DiceLibrary
+    name: DiceLibrary
+  - name: .
+  - uid: DiceLibrary.Model
+    name: Model
+- uid: DiceLibrary.Factory.IDiceFactory.Create*
+  commentId: Overload:DiceLibrary.Factory.IDiceFactory.Create
+  name: Create
+  nameWithType: IDiceFactory.Create
+  fullName: DiceLibrary.Factory.IDiceFactory.Create
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
