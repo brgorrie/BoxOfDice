@@ -5,3 +5,4 @@
 
 Introducing Box of Dice, a library for rolling dice with a command line utility for rolling dice from a CMD prompt. 
 
+For an overview of the default DocFX API documentation please head to https://brgorrie.github.io/BoxOfDice/api/index.html 
